@@ -1,15 +1,14 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <gates-component />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import GatesComponent from './components/GatesComponent.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    'gates-component' : GatesComponent,
   }
 }
 </script>
