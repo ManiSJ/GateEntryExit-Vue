@@ -1,7 +1,9 @@
 <template>
-<div class="container">
+<div class="container mt-5">
   <div class="row">
     <div class="col-md-6">
+
+      <h1 v-if="showHeader">{{headerText}}</h1>
     
       <form @submit.prevent="createUpdateGate">
         <div class="input-group mb-3">
@@ -57,6 +59,9 @@ export default {
       return this.generateTotalCountArray();
     }
   },
+   props: [
+      'headerText', 'showHeader'
+    ],
   methods : {
     getGates(maxCount, skipNumber, filterText){     
      axios.post(`${this.api_url}/api/gate/getAll`, 
