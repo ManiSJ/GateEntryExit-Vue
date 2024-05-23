@@ -8,7 +8,8 @@
 
 <gates-component 
     header-text="Prop check"
-    v-bind:show-header="false" />
+    v-bind:show-header="false" 
+    @emit-check="emitCheck"/>
 
  <!-- <div>
         <router-link to="/gates">Gates</router-link>
@@ -31,6 +32,11 @@ export default {
   name: 'App',
   components: {
     'gates-component' : GatesComponent,
+  },
+  methods : {
+    emitCheck(){
+      console.log('Logging from App.vue after receiving emit event from child');
+    }
   }
 }
 </script>

@@ -4,6 +4,8 @@
     <div class="col-md-6">
 
       <h1 v-if="showHeader">{{headerText}}</h1>
+
+      <button class="mt-5 mb-5 btn btn-primary" @click="emitCheck">Emit check</button>
     
       <form @submit.prevent="createUpdateGate">
         <div class="input-group mb-3">
@@ -108,6 +110,9 @@ export default {
       axios.delete(`${this.api_url}/api/gate/delete/${id}`).then(() => {
         this.getGates(this.maxResultCount, 0, "");
       });
+    },
+    emitCheck(){
+      this.$emit('emit-check');
     }
   }
 }
